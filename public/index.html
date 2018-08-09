@@ -39,17 +39,21 @@ document.onclick = function() {
   var d = document.createElement('div');
   d.style = 'position:relative;height:200px;cursor:pointer;background:rgb(' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ')';
   d.innerHTML = '<button>disableScroll</button><button>enableScroll</button><button>setTitle</button><button>remove</button>';
-  d.childNodes[0].onclick = () => {
+  d.childNodes[0].onclick = e => {
     landing.call('disableScroll');
+    e.stopPropagation();
   }
-  d.childNodes[1].onclick = () => {
+  d.childNodes[1].onclick = e => {
     landing.call('enableScroll');
+    e.stopPropagation();
   }
-  d.childNodes[2].onclick = () => {
-    landing.call('setTitle', this.style.backgroundColor);
+  d.childNodes[2].onclick = e => {
+    landing.call('setTitle', d.style.backgroundColor);
+    e.stopPropagation();
   }
-  d.childNodes[3].onclick = () => {
-    this.parentNode.removeChild(this);
+  d.childNodes[3].onclick = e => {
+    d.parentNode.removeChild(d);
+    e.stopPropagation();
   }
   document.body.appendChild(d);
 }
