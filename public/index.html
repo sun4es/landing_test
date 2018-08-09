@@ -38,12 +38,18 @@
 document.onclick = function() {
   var d = document.createElement('div');
   d.style = 'position:relative;height:200px;cursor:pointer;background:rgb(' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ')';
-  d.innerHTML = '<button>disable scroll</button><button>enable scroll</button>';
-  d.firstChild.onclick = () => {
+  d.innerHTML = '<button>disableScroll</button><button>enableScroll</button><button>setTitle</button><button>remove</button>';
+  d.childNodes[0].onclick = () => {
     landing.call('disableScroll');
   }
-  d.lastChild.onclick = () => {
+  d.childNodes[1].onclick = () => {
     landing.call('enableScroll');
+  }
+  d.childNodes[2].onclick = () => {
+    landing.call('setTitle', this.style.backgroundColor);
+  }
+  d.childNodes[3].onclick = () => {
+    this.parentNode.removeChild(this);
   }
   document.body.appendChild(d);
 }
