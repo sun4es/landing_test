@@ -3,7 +3,7 @@ var app = express();
 var http = require('http').Server(app);
 
 app.use(express.static('public'))
-app.get(/([a-z0-9]{1,32})$/i, function(req, res){
+app.get(/test[1-9]$/, function(req, res){
   res.sendFile('/public/index.html');
 });
 
