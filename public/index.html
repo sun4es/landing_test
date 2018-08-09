@@ -6,10 +6,9 @@
   <title>Тайтл</title>
   <style>
 
-  body {
-    position: absolute;
-    min-width: 100%;
-    margin: 0;
+  #root {
+    min-height: 100%;
+    background: #333;
   }
 
   </style>
@@ -38,6 +37,7 @@
   <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
+  <div id="root"></div>
   <script src="https://akanov.cs7777.vk.com/js/cmodules/web/landings_api.js"></script>
   <script>
 
@@ -61,7 +61,7 @@ document.onclick = function() {
     d.parentNode.removeChild(d);
     e.stopPropagation();
   }
-  document.body.appendChild(d);
+  document.querySelector('#root').appendChild(d);
 }
 
   </script>
