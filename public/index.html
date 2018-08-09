@@ -38,6 +38,13 @@
 document.onclick = function() {
   var d = document.createElement('div');
   d.style = 'position:relative;height:200px;background:rgb(' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ')';
+  d.innerHTML = '<button>disable scroll</button><button>enable scroll</button>';
+  d.firstChild.onclick = () => {
+    landing.call('disableScroll');
+  }
+  d.lastChild.onclick = () => {
+    landing.call('enableScroll');
+  }
   document.body.appendChild(d);
 }
 
