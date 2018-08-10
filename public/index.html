@@ -62,7 +62,7 @@
 document.onclick = function() {
   var d = document.createElement('div');
   d.style = 'position:relative;height:200px;cursor:pointer;background:rgb(' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ')';
-  d.innerHTML = '<button>disableScroll</button><button>enableScroll</button><button>setTitle</button><button>remove</button><button>show modal</button>';
+  d.innerHTML = '<button>disableScroll</button><button>enableScroll</button><button>setTitle</button><button>remove</button><button>show modal</button><button>set rect</button><button>unset rect</button>';
   d.childNodes[0].onclick = e => {
     landing.call('disableScroll');
     e.stopPropagation();
@@ -85,10 +85,16 @@ document.onclick = function() {
   d.childNodes[4].onclick = e => {
     document.querySelector('.modal').classList.add('modal--visible');
   }
+  d.childNodes[5].onclick = e => {
+    landing.setRect({ width: 0, height: 1000, });
+  }
+  d.childNodes[6].onclick = e => {
+    landing.unsetRect();
+  }
 
   document.body.appendChild(d);
 
-  document.querySelector('.modal').onclick = e => { console.log('before remove: ' + landing.getPageSize().height); e.currentTarget.classList.remove('modal--visible'); landing.resetSize(); }
+  document.querySelector('.modal').onclick = e => { e.currentTarget.classList.remove('modal--visible'); landing.resetSize(); }
 }
 
   </script>
