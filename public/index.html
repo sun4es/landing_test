@@ -37,7 +37,6 @@
   <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
-  <div id="root"></div>
   <script src="https://akanov.cs7777.vk.com/js/cmodules/web/landings_api.js"></script>
   <script>
 
@@ -61,7 +60,7 @@ document.onclick = function() {
     d.parentNode.removeChild(d);
     e.stopPropagation();
   }
-  document.querySelector('#root').appendChild(d);
+  document.body.appendChild(d);
 }
 
   </script>
