@@ -88,7 +88,7 @@ document.onclick = function() {
 
   document.body.appendChild(d);
 
-  document.querySelector('.modal').onclick = e => e.currentTarget.classList.remove('modal--visible');
+  document.querySelector('.modal').onclick = e => { console.log('before remove: ' + landing.getPageSize().height); e.currentTarget.classList.remove('modal--visible'); landing.resetSize(); }
 }
 
   </script>
