@@ -60,6 +60,7 @@ document.onclick = function() {
     e.stopPropagation();
   }
   d.childNodes[3].onclick = e => {
+    console.log('before remove: ' + landing.getPageSize().height);
     d.parentNode.removeChild(d);
     e.stopPropagation();
 
