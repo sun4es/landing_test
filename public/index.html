@@ -6,14 +6,6 @@
   <title>Тайтл</title>
   <style>
 
-  html, body {
-    position: absolute;
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    background: #333;
-  }
-
   </style>
   <meta property="og:site_name" content="TJ" />
   <meta property="fb:app_id" content="506675079378064" />
@@ -62,6 +54,8 @@ document.onclick = function() {
   d.childNodes[3].onclick = e => {
     d.parentNode.removeChild(d);
     e.stopPropagation();
+
+    landing.resetSize();
   }
   document.body.appendChild(d);
 }
