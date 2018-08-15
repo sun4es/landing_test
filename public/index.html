@@ -89,7 +89,7 @@ document.onclick = function() {
 
   requestAnimationFrame(() => landing.setSize(landing.getPageSize()));
 
-  document.querySelector('.modal').onclick = e => { e.currentTarget.classList.remove('modal--visible'); landing.resetSize(); }
+  document.querySelector('.modal').onclick = e => { e.currentTarget.classList.remove('modal--visible'); /* landing.resetSize(); */ requestAnimationFrame(() => landing.setSize(landing.getPageSize())); }
 }
 
   </script>
