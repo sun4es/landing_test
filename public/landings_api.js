@@ -1,1 +1,1 @@
-/Users/a.kanov/VKFS/data/static/js/cmodules/web/landings_api.js
+./../../../VKFS/data/static/js/cmodules/web/landings_api.js
