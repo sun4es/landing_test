@@ -93,7 +93,7 @@ document.onclick = function() {
     e.stopPropagation();
 
     // landing.resetSize();
-    requestAnimationFrame(() => landing.setSize(landing.getPageSize()));
+    updatePageSize(['.root', '.modal']);
   }
   d.childNodes[2].onclick = e => {
     document.querySelector('.modal').classList.add('modal--visible');
