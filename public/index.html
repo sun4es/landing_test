@@ -94,6 +94,8 @@ document.onclick = function() {
 
   document.body.appendChild(d);
 
+  requestAnimationFrame(() => landing.setSize(landing.getPageSize()));
+
   document.querySelector('.modal').onclick = e => { e.currentTarget.classList.remove('modal--visible'); landing.resetSize(); }
 }
 
