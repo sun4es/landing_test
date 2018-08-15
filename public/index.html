@@ -60,26 +60,6 @@
   <script src="https://akanov.cs7777.vk.com/js/cmodules/web/landings_api.js"></script>
   <script>
 
-const getPageSize = containerSelectors => {
-  let width = 0;
-  let height = 0;
-  for (const selector of containerSelectors) {
-    const container = document.querySelector(selector);
-    if (container) {
-      const rect = container.getBoundingClientRect();
-      width = Math.max(rect.left + rect.width, width);
-      height = Math.max(rect.top + rect.height, height);
-    }
-  }
-  return { width, height, };
-}
-
-const updatePageSize = containerSelectors => requestAnimationFrame(() => {
-  const size = getPageSize(containerSelectors);
-  console.log(size);
-  landing.setSize(size);
-});
-
 document.onclick = function() {
   var d = document.createElement('div');
   d.style = 'position:relative;height:200px;cursor:pointer;background:rgb(' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ')';
@@ -93,11 +73,11 @@ document.onclick = function() {
     e.stopPropagation();
 
     // landing.resetSize();
-    updatePageSize(['.root', '.modal']);
+    landing.updateSize(['.root', '.modal']);
   }
   d.childNodes[2].onclick = e => {
     document.querySelector('.modal').classList.add('modal--visible');
-    updatePageSize(['.root', '.modal']);
+    landing.updateSize(['.root', '.modal']);
   }
   d.childNodes[3].onclick = e => {
     landing.setRect({ width: 0, height: 1000, });
@@ -108,9 +88,9 @@ document.onclick = function() {
 
   document.querySelector('.root').appendChild(d);
 
-  updatePageSize(['.root', '.modal']);
+  landing.updateSize(['.root', '.modal']);
 
-  document.querySelector('.modal').onclick = e => { e.currentTarget.classList.remove('modal--visible'); /* landing.resetSize(); */ updatePageSize(['.root', '.modal']); }
+  document.querySelector('.modal').onclick = e => { e.currentTarget.classList.remove('modal--visible'); landing.updateSize(['.root', '.modal']); }
 }
 
   </script>
