@@ -55,9 +55,30 @@
   <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
+  <div class="root"></div>div>
   <div class="modal"></div>
   <script src="https://akanov.cs7777.vk.com/js/cmodules/web/landings_api.js"></script>
   <script>
+
+const getPageSize = containerSelectors => {
+  let width = 0;
+  let height = 0;
+  for (const selector of containerSelectors) {
+    const container = document.querySelector(selector);
+    if (container) {
+      const rect = container.getBoundingClientRect();
+      width = Math.max(rect.left + rect.width, width);
+      height = Math.max(rect.top + rect.height, height);
+    }
+  }
+  return { width, height, };
+}
+
+const updatePageSize = containerSelectors => requestAnimationFrame(() => {
+  const size = getPageSize(containerSelectors);
+  console.log(size);
+  landing.setSize(size);
+});
 
 document.onclick = function() {
   var d = document.createElement('div');
@@ -76,7 +97,7 @@ document.onclick = function() {
   }
   d.childNodes[2].onclick = e => {
     document.querySelector('.modal').classList.add('modal--visible');
-    requestAnimationFrame(() => landing.setSize(landing.getPageSize()));
+    updatePageSize(['.root', '.modal']);
   }
   d.childNodes[3].onclick = e => {
     landing.setRect({ width: 0, height: 1000, });
@@ -85,11 +106,11 @@ document.onclick = function() {
     landing.unsetRect();
   }
 
-  document.body.appendChild(d);
+  document.querySelector('.root').appendChild(d);
 
-  requestAnimationFrame(() => landing.setSize(landing.getPageSize()));
+  updatePageSize(['.root', '.modal']);
 
-  document.querySelector('.modal').onclick = e => { e.currentTarget.classList.remove('modal--visible'); /* landing.resetSize(); */ requestAnimationFrame(() => landing.setSize(landing.getPageSize())); }
+  document.querySelector('.modal').onclick = e => { e.currentTarget.classList.remove('modal--visible'); /* landing.resetSize(); */ updatePageSize(['.root', '.modal']); }
 }
 
   </script>
