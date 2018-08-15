@@ -62,33 +62,26 @@
 document.onclick = function() {
   var d = document.createElement('div');
   d.style = 'position:relative;height:200px;cursor:pointer;background:rgb(' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ')';
-  d.innerHTML = '<button>disableScroll</button><button>enableScroll</button><button>setTitle</button><button>remove</button><button>show modal</button><button>set rect</button><button>unset rect</button>';
+  d.innerHTML = '<button>setTitle</button><button>remove</button><button>show modal</button><button>set rect</button><button>unset rect</button>';
   d.childNodes[0].onclick = e => {
-    landing.call('disableScroll');
+    landing.setTitle(d.style.backgroundColor);
     e.stopPropagation();
   }
   d.childNodes[1].onclick = e => {
-    landing.call('enableScroll');
-    e.stopPropagation();
-  }
-  d.childNodes[2].onclick = e => {
-    landing.call('setTitle', d.style.backgroundColor);
-    e.stopPropagation();
-  }
-  d.childNodes[3].onclick = e => {
     d.parentNode.removeChild(d);
     e.stopPropagation();
 
     // landing.resetSize();
     requestAnimationFrame(() => landing.setSize(landing.getPageSize()));
   }
-  d.childNodes[4].onclick = e => {
+  d.childNodes[2].onclick = e => {
     document.querySelector('.modal').classList.add('modal--visible');
+    requestAnimationFrame(() => landing.setSize(landing.getPageSize()));
   }
-  d.childNodes[5].onclick = e => {
+  d.childNodes[3].onclick = e => {
     landing.setRect({ width: 0, height: 1000, });
   }
-  d.childNodes[6].onclick = e => {
+  d.childNodes[4].onclick = e => {
     landing.unsetRect();
   }
 
