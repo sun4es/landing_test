@@ -175,4 +175,9 @@ eval("/* (ignored) *///# sourceURL=[module]\n//# sourceMappingURL=data:applicati
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/kphp/akanov/redesign/static/js/modules/web/entries/landings_host.js */"./static/js/modules/web/entries
+module.exports = __webpack_require__(/*! /var/kphp/akanov/redesign/static/js/modules/web/entries/landings_host.js */"./static/js/modules/web/entries/landings_host.js");
+
+
+/***/ })
+
+/******/ });
