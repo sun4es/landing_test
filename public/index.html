@@ -1,98 +1,106 @@
+
 <!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Тайтл</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="google-site-verification" content="CNjLCRpSR2sryzCC4NQKKCL5WnvmBTaag2J_UlTyYeQ" />
+  <meta name="yandex-verification" content="7117ba68b7525f1c" />
+  <title>Ресурсы бренда</title>
   <style>
 
   body {
-    box-sizing: border-box;
     margin: 0;
-    padding: 10px;
-    background: #333;
-    user-select: none;
   }
 
-  .modal {
-    display: none;
+  .frame {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 100;
-    width: 100%;
-    height: 3500px;
-    background: rgba(0, 0, 0, .5);
-  }
-
-  .modal--visible {
-    display: block;
+    width: 1px;
+    min-width: 100%;
+    height: 1px;
+    min-height: 100%;
+    border: 0;
   }
 
   </style>
-  <meta property="og:site_name" content="TJ" />
-  <meta property="fb:app_id" content="506675079378064" />
-  <meta property="twitter:site" content="" />
-  <meta property="vk:image" content="https://tjournal.ru/cover/74811/vk/1533813164/cover.jpg" />
-  <meta property="twitter:image" content="https://tjournal.ru/cover/74811/tw/1533813164/cover.jpg" />
-  <meta property="og:image" content="https://tjournal.ru/cover/74811/fb/1533813164/cover.jpg" />
-  <meta property="og:image:width" content="600" />
-  <meta property="og:image:height" content="315" />
-  <meta property="og:title" content="Что будет когда Елизавета II умрет? Как изменится жизнь Великобритании?" />
-  <meta property="twitter:title" content="Что будет когда Елизавета II умрет? Как изменится жизнь Великобритании?" />
-  <meta property="og:type" content="article" />
-  <meta property="og:description" content="Елизавете II недавно исполнилось 92 года. Старейший в истории монарх и одна из самых известных персон Британии, после своей кончины передаст правление своему сыну Чарльзу, принцу Уэльскому. Тем самым, все титулы (а их больше 50-ти) перейдут к нему. Что же будет дальше?" />
-  <meta property="twitter:description" content="Елизавете II недавно исполнилось 92 года. Старейший в истории монарх и одна из самых известных персон Британии, после своей кончины передаст правление своему сыну Чарльзу, принцу Уэльскому. Тем самым, все титулы (а их больше 50-ти) перейдут к нему. Что же будет дальше?" />
-  <meta name="description" content="Елизавете II недавно исполнилось 92 года. Старейший в истории монарх и одна из самых известных персон Британии, после своей кончины передаст правление своему сыну Чарльзу, принцу Уэльскому. Тем самым, все титулы (а их больше 50-ти) перейдут к нему. Что же будет дальше?" />
-  <meta property="og:url" content="https://tjournal.ru/74811-chto-budet-kogda-elizaveta-ii-umret-kak-izmenitsya-zhizn-velikobritanii" />
-  <meta property="twitter:url" content="https://tjournal.ru/74811-chto-budet-kogda-elizaveta-ii-umret-kak-izmenitsya-zhizn-velikobritanii" />
-  <link rel="canonical" href="https://tjournal.ru/74811-chto-budet-kogda-elizaveta-ii-umret-kak-izmenitsya-zhizn-velikobritanii">
-  <meta name="author" content="yan moroh" />
-  <meta property="article:author" content="https://www.facebook.com/tjournal/" />
-  <meta property="article:publisher" content="https://www.facebook.com/tjournal/" />
-  <meta property="article:published_time" content="2018-08-09T14:12:44+03:00" />
-  <link rel="image_src" href="https://tjournal.ru/cover/74811/fb/1533813164/cover.jpg">
-  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
-  <div class="root"></div>
-  <div class="modal"></div>
-  <script src="https://akanov.cs7777.vk.com/js/cmodules/web/landings_api.js"></script>
   <script>
+    (function() {
 
-document.onclick = function() {
-  var d = document.createElement('div');
-  d.style = 'position:relative;height:200px;cursor:pointer;background:rgb(' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ')';
-  d.innerHTML = '<button>setTitle</button><button>remove</button><button>show modal</button><button>set rect</button><button>unset rect</button>';
-  d.childNodes[0].onclick = e => {
-    landing.setTitle(d.style.backgroundColor);
-    e.stopPropagation();
-  }
-  d.childNodes[1].onclick = e => {
-    d.parentNode.removeChild(d);
-    e.stopPropagation();
+    var url = 'https://brand.vkforms.ru/?language=0&parent_language=0';
+    var langKeys = {"title":"blog_brand_resources_landing_title"};
+    var langValues = {"blog_brand_resources_landing_title":{"0":"Ресурсы бренда","3":"Brand Assets"}};
 
-    // landing.resetSize();
-    landing.updateSize(['.root', '.modal']);
-  }
-  d.childNodes[2].onclick = e => {
-    document.querySelector('.modal').classList.add('modal--visible');
-    landing.updateSize(['.root', '.modal']);
-  }
-  d.childNodes[3].onclick = e => {
-    landing.setRect({ width: 0, height: 1000, });
-  }
-  d.childNodes[4].onclick = e => {
-    landing.unsetRect();
-  }
+    var iframe = document.createElement('iframe');
+    iframe.className = 'frame';
+    iframe.webkitallowfullscreen = true;
+    iframe.mozallowfullscreen = true;
+    iframe.allowfullscreen = true;
+    iframe.allow = 'geolocation; microphone; camera; autoplay;';
 
-  document.querySelector('.root').appendChild(d);
+    var viewportSize = getViewportSize();
+    iframe.src = url + (~url.indexOf('?') ? '&' : '?') + 'viewportWidth=' + viewportSize.width + '&viewportHeight=' + viewportSize.height;
 
-  landing.updateSize(['.root', '.modal']);
+    if (navigator.userAgent.match(/iPad|iPhone|iPod/) && !window.MSStream) {
+      iframe.scrolling = 'no';
+    }
+    document.body.appendChild(iframe);
 
-  document.querySelector('.modal').onclick = e => { e.currentTarget.classList.remove('modal--visible'); landing.updateSize(['.root', '.modal']); }
-}
+    function getLangValueByKey(lang, key) {
+      if (langValues.hasOwnProperty(key)) {
+        var values = langValues[key];
+        if (values.hasOwnProperty(lang)) {
+          return values[lang];
+        }
+      }
+    }
 
+    function getLangValueByName(lang, name) {
+      if (langKeys.hasOwnProperty(name)) {
+        return getLangValueByKey(lang, langKeys[name]);
+      }
+    }
+
+    function onLangChange(lang) {
+      var title = getLangValueByName(lang, 'title');
+      if (title) {
+        document.title = title;
+      }
+    }
+
+    window.addEventListener('message', function(e) {
+      var data = e.data;
+      if (data.hasOwnProperty('language')) {
+        onLangChange(data.language);
+      }
+    });
+
+    function getViewportSize() {
+      var documentElement = document.documentElement;
+      return {
+        width: documentElement.clientWidth,
+        height: documentElement.clientHeight,
+      };
+    }
+
+    function notify(data) {
+      iframe.contentWindow.postMessage(data, '*');
+    }
+
+    function onResize() {
+      notify({
+        viewport: getViewportSize(),
+      });
+    }
+
+    window.addEventListener('resize', onResize);
+    onResize();
+
+    })();
   </script>
 </body>
 </html>
