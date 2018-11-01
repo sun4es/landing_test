@@ -1,0 +1,58 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <style>
+
+.item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50%;
+  width: 10%;
+  height: 10%;
+  transform: translate3d(-50%, -50%, 0);
+  background: #C00;
+}
+
+.item-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.item-label:before {
+  content: '';
+  min-height: 1px;
+  flex: 1 1 auto;
+  width: 100%;
+  background: rgba(0, 0, 0, .4);
+}
+
+.item-label__content {
+  flex: 0 0 auto;
+  width: 100%;
+  font-size: 24px;
+  background: rgba(0, 0, 0, .6);
+}
+
+  </style>
+</head>
+<body>
+
+<div class="item">
+  <div class="item-label">
+    <div class="item-label__content">GIF</div>
+  </div>
+</div>
+
+</body>
+</html>

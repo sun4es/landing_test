@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Тайтл</title>
+  <style>
+
+  body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px;
+    background: #333;
+    user-select: none;
+  }
+
+  .modal {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 3500px;
+    background: rgba(0, 0, 0, .5);
+  }
+
+  .modal--visible {
+    display: block;
+  }
+
+  </style>
+  <meta property="og:site_name" content="TJ" />
+  <meta property="fb:app_id" content="506675079378064" />
+  <meta property="twitter:site" content="" />
+  <meta property="vk:image" content="https://tjournal.ru/cover/74811/vk/1533813164/cover.jpg" />
+  <meta property="twitter:image" content="https://tjournal.ru/cover/74811/tw/1533813164/cover.jpg" />
+  <meta property="og:image" content="https://tjournal.ru/cover/74811/fb/1533813164/cover.jpg" />
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="315" />
+  <meta property="og:title" content="Что будет когда Елизавета II умрет? Как изменится жизнь Великобритании?" />
+  <meta property="twitter:title" content="Что будет когда Елизавета II умрет? Как изменится жизнь Великобритании?" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="Елизавете II недавно исполнилось 92 года. Старейший в истории монарх и одна из самых известных персон Британии, после своей кончины передаст правление своему сыну Чарльзу, принцу Уэльскому. Тем самым, все титулы (а их больше 50-ти) перейдут к нему. Что же будет дальше?" />
+  <meta property="twitter:description" content="Елизавете II недавно исполнилось 92 года. Старейший в истории монарх и одна из самых известных персон Британии, после своей кончины передаст правление своему сыну Чарльзу, принцу Уэльскому. Тем самым, все титулы (а их больше 50-ти) перейдут к нему. Что же будет дальше?" />
+  <meta name="description" content="Елизавете II недавно исполнилось 92 года. Старейший в истории монарх и одна из самых известных персон Британии, после своей кончины передаст правление своему сыну Чарльзу, принцу Уэльскому. Тем самым, все титулы (а их больше 50-ти) перейдут к нему. Что же будет дальше?" />
+  <meta property="og:url" content="https://tjournal.ru/74811-chto-budet-kogda-elizaveta-ii-umret-kak-izmenitsya-zhizn-velikobritanii" />
+  <meta property="twitter:url" content="https://tjournal.ru/74811-chto-budet-kogda-elizaveta-ii-umret-kak-izmenitsya-zhizn-velikobritanii" />
+  <link rel="canonical" href="https://tjournal.ru/74811-chto-budet-kogda-elizaveta-ii-umret-kak-izmenitsya-zhizn-velikobritanii">
+  <meta name="author" content="yan moroh" />
+  <meta property="article:author" content="https://www.facebook.com/tjournal/" />
+  <meta property="article:publisher" content="https://www.facebook.com/tjournal/" />
+  <meta property="article:published_time" content="2018-08-09T14:12:44+03:00" />
+  <link rel="image_src" href="https://tjournal.ru/cover/74811/fb/1533813164/cover.jpg">
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+  <div class="root"></div>
+  <div class="modal"></div>
+  <script src="https://akanov.cs7777.vk.com/js/cmodules/web/landings_api.js"></script>
+  <script>
+
+document.onclick = function() {
+  var d = document.createElement('div');
+  d.style = 'position:relative;height:200px;cursor:pointer;background:rgb(' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ',' + Math.round(255 * Math.random()) + ')';
+  d.innerHTML = '<button>setTitle</button><button>remove</button><button>show modal</button><button>set rect</button><button>unset rect</button>';
+  d.childNodes[0].onclick = e => {
+    landing.setTitle(d.style.backgroundColor);
+    e.stopPropagation();
+  }
+  d.childNodes[1].onclick = e => {
+    d.parentNode.removeChild(d);
+    e.stopPropagation();
+
+    // landing.resetSize();
+    landing.updateSize(['.root', '.modal']);
+  }
+  d.childNodes[2].onclick = e => {
+    document.querySelector('.modal').classList.add('modal--visible');
+    landing.updateSize(['.root', '.modal']);
+  }
+  d.childNodes[3].onclick = e => {
+    landing.setRect({ width: 0, height: 1000, });
+  }
+  d.childNodes[4].onclick = e => {
+    landing.unsetRect();
+  }
+
+  document.querySelector('.root').appendChild(d);
+
+  landing.updateSize(['.root', '.modal']);
+
+  document.querySelector('.modal').onclick = e => { e.currentTarget.classList.remove('modal--visible'); landing.updateSize(['.root', '.modal']); }
+}
+
+  </script>
+</body>
+</html>
