@@ -8,99 +8,20 @@
   <meta name="google-site-verification" content="Sn17wNgzJwCIrx75L14_JO-dwXJhdCcD98u4pGLeLWU" />
   <meta name="yandex-verification" content="d14c3238edf78956" />
   <title>Ресурсы бренда</title>
-  <style>
 
-  body {
-    margin: 0;
-  }
+  <meta property="og:title" content="Ресурсы бренда ВКонтакте" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vk.com/brand" />
+  <meta property="og:image" content="https://tranquil-rocky-mountain-99387.herokuapp.com/logo.png" />
+  <meta property="og:description" content="Ресурсы бренда ВКонтакте и руководство по их использованию: логотип ВКонтакте, правила и примеры его размещения, фирменные цвета, шрифт и правила написания названия, материалы для партнеров" />
 
-  .frame {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1px;
-    min-width: 100%;
-    height: 1px;
-    min-height: 100%;
-    border: 0;
-  }
+  <meta name="twitter:card" content="summary" />
+  <meta property="twitter:title" content="Ресурсы бренда ВКонтакте" />
+  <meta property="twitter:image" content="https://tranquil-rocky-mountain-99387.herokuapp.com/logo.png" />
+  <meta property="twitter:description" content="Ресурсы бренда ВКонтакте и руководство по их использованию: логотип ВКонтакте, правила и примеры его размещения, фирменные цвета, шрифт и правила написания названия, материалы для партнеров" />
 
-  </style>
 </head>
 <body>
-  <script>
-    (function() {
 
-    var url = 'https://brand.vkforms.ru/?language=0&parent_language=0';
-    var langKeys = {"title":"blog_brand_resources_landing_title"};
-    var langValues = {"blog_brand_resources_landing_title":{"0":"Ресурсы бренда","3":"Brand Assets"}};
-
-    var iframe = document.createElement('iframe');
-    iframe.className = 'frame';
-    iframe.webkitallowfullscreen = true;
-    iframe.mozallowfullscreen = true;
-    iframe.allowfullscreen = true;
-    iframe.allow = 'geolocation; microphone; camera; autoplay;';
-
-    var viewportSize = getViewportSize();
-    iframe.src = url + (~url.indexOf('?') ? '&' : '?') + 'viewportWidth=' + viewportSize.width + '&viewportHeight=' + viewportSize.height;
-
-    if (navigator.userAgent.match(/iPad|iPhone|iPod/) && !window.MSStream) {
-      iframe.scrolling = 'no';
-    }
-    document.body.appendChild(iframe);
-
-    function getLangValueByKey(lang, key) {
-      if (langValues.hasOwnProperty(key)) {
-        var values = langValues[key];
-        if (values.hasOwnProperty(lang)) {
-          return values[lang];
-        }
-      }
-    }
-
-    function getLangValueByName(lang, name) {
-      if (langKeys.hasOwnProperty(name)) {
-        return getLangValueByKey(lang, langKeys[name]);
-      }
-    }
-
-    function onLangChange(lang) {
-      var title = getLangValueByName(lang, 'title');
-      if (title) {
-        document.title = title;
-      }
-    }
-
-    window.addEventListener('message', function(e) {
-      var data = e.data;
-      if (data.hasOwnProperty('language')) {
-        onLangChange(data.language);
-      }
-    });
-
-    function getViewportSize() {
-      var documentElement = document.documentElement;
-      return {
-        width: documentElement.clientWidth,
-        height: documentElement.clientHeight,
-      };
-    }
-
-    function notify(data) {
-      iframe.contentWindow.postMessage(data, '*');
-    }
-
-    function onResize() {
-      notify({
-        viewport: getViewportSize(),
-      });
-    }
-
-    window.addEventListener('resize', onResize);
-    onResize();
-
-    })();
-  </script>
 </body>
 </html>
